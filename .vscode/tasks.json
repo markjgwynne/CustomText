@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++17",
+                "${workspaceFolder}\\src\\*.cpp",
+                "-o",
+                "${workspaceFolder}\\build\\game.exe",
+                "-g",
+                "-luser32",
+				"-lgdi32",
+				"-lgdiplus",
+				"-lopengl32",
+				"-lShlwapi",
+                "-ldwmapi",
+				"-lstdc++fs"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "C/C++: g++.exe build active file"
+        }
+    ],
+    "version": "2.0.0"
+}
