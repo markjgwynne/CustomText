@@ -1,12 +1,11 @@
 #define OLC_PGE_APPLICATION
 #include "../includes/olcPixelGameEngine.h"
 
-//#include "../includes/Letters.h"
+//#include "../includes/ViewSpriteSheet.h" 
+//ViewSpriteSheet cViewFontSprites;
 
-#include "../includes/ViewSpriteSheet.h" 
-
-ViewSpriteSheet cViewFontSprites;
-//Breakout::CustomText cDrawLetters;
+#include "../includes/Letters.h"
+Breakout::CustomText cDrawLetters;
 float fGameSpeed = 300.0f;
 
 class Example : public olc::PixelGameEngine
@@ -22,10 +21,10 @@ public:
 	{
 		// Called once at the start, so create things here
 
-		//cDrawLetters.SetAttributes(0 - cDrawLetters.GetWidth(), 0, 10, 5); // start off screen
-		//cDrawLetters.AddLetters({B, R, E, A, K, O, U, T});
+		cDrawLetters.SetAttributes(0 - cDrawLetters.GetWidth(), 0, 10, 5); // start off screen
+		cDrawLetters.AddLetters({B, R, E, A, K, O, U, T});
 
-		cViewFontSprites.RenderSpriteSheet(this);
+		//cViewFontSprites.RenderSpriteSheet(this);
 	
 		return true;
 	}
@@ -39,7 +38,7 @@ public:
 
 		// update frame
 
-		/*
+		
 		int x = cDrawLetters.GetStartX();
 		int s = ScreenWidth();
 		
@@ -49,13 +48,12 @@ public:
 			
 			cDrawLetters.SetAttributes(0 - cDrawLetters.GetWidth(), cDrawLetters.GetStartY() + cDrawLetters.GetHeight(), 10, 5); // start off screen
 		}
-		*/
 		
 		// clear screen
-		//Clear(olc::Pixel(0,0,0));
+		Clear(olc::Pixel(0,0,0));
 
 		// render
-		//cDrawLetters.Render(this);
+		cDrawLetters.Render(this);
 
 		return true;
 	}
